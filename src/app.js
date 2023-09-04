@@ -1,11 +1,8 @@
-// Importing express
+// Import Section
 const express = require('express');
 const app = express();
-
-//----------------------------------
-
-// imporing path variable 
 const path = require('path');
+const hbs = require('hbs');
 
 //----------------------------------
 
@@ -25,14 +22,23 @@ const templatePath = path.join(__dirname,'..','views');
 app.set('view engine','hbs');
 app.set('views',templatePath)
 
+// Setting the partials
+const partialPath = path.join(__dirname,'..','partials');
+hbs.registerPartials(partialPath);
+
 //----------------------------------
 
 
 // All Page Routes
 // ---------------------------------
-app.get('/index',(req,res)=>{
-    res.render('index')
+// Home page
+app.get('/',(req,res)=>{
+    res.render('index',{
+        name: 'Arunava'
+    })
 })
+
+app.get()
 
 
 
