@@ -7,7 +7,7 @@ const hbs = require('hbs');
 //----------------------------------
 
 // Intializing path for both server and local
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 8081;
 
 //----------------------------------
 
@@ -38,7 +38,9 @@ app.get('/',(req,res)=>{
     })
 })
 
-app.get()
+app.get('*',(req,res) => {
+    res.render('404');
+})
 
 
 
