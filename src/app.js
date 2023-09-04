@@ -7,7 +7,7 @@ const hbs = require('hbs');
 //----------------------------------
 
 // Intializing path for both server and local
-const port = process.env.PORT || 8081;
+const port = process.env.PORT || 8000;
 
 //----------------------------------
 
