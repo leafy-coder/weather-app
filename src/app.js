@@ -38,6 +38,17 @@ app.get('/',(req,res)=>{
     })
 })
 
+// weather page
+app.get('/weather',(req,res)=>{
+    res.render('weather')
+})
+
+// About page
+app.get('/about',(req,res)=>{
+    res.render('about')
+})
+
+// 404 error page
 app.get('*',(req,res) => {
     res.render('404');
 })
