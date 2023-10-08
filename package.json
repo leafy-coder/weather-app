@@ -4,7 +4,8 @@
   "description": "This is a application to check weather using express js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "rain-vine": "nodemon src/app.js -e js,hbs"
   },
   "repository": {
     "type": "git",
