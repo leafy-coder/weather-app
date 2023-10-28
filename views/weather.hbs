@@ -19,13 +19,13 @@
                 </div>
                 <div class="temp_info">
                     <div class="top_layer">
-                        <p id="day">Tuesday</p>
-                        <p id="date">13th October</p>
+                        <p id="day"></p>
+                        <p id="date"></p>
                     </div>
                     <div class="main_layer">
-                        <p id="cityname">Get Output Here</p>
+                        <p id="city_name">Get Output Here</p>
                         <div class="middle_layer data_hide">
-                            <p id="temp"><span>0</span><sup>o</sup>C</p>
+                            <p id="temp_real_val"><span id="temp">0</span><sup>o</sup>C</p>
                             <p id="temp_status"><i class="fa fa-cloud" aria-hidden="true"></i></p>
                         </div>
                     </div>
@@ -35,7 +35,27 @@
     </div>
     {{>footer}}
 
-    <script src="js/main.js"></script>
     </body>
+    <script src="../js/main.js"></script>
+    <script>
+        const getCurrentDay = () => {
+            let weekDay = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+            let currentTime = new Date();
+            let day = weekDay[currentTime.getDay()];
+            return day;
+        };
+        const getCurrentDate = () => {
+            let date = new Date();
+            let day = date.getDate();
+            let month = date.getMonth() + 1;
+            let year = date.getFullYear();
 
+            let currentDate = `${day}-${month}-${year}`;
+            return currentDate;
+        }
+        const day = getCurrentDay();
+        document.getElementById('day').innerText = day;
+        const date = getCurrentDate();
+        document.getElementById('date').innerText = date;
+    </script>
 </html>
