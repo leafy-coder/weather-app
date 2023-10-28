@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rain Vine</title>
     {{>headerfiles}}
 </head>
+
 <body>
     {{>navbar}}
+    {{!-- main header --}}
+    <div class="container-fluid main_header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div class="row">
+                    {{!-- left side div --}}
+                    <div class="col-md-6 col-12 main_header_left">
+                        <p>My name is <span class="text-clr">Arunava Ghosh</span></p>
+                        <p>And</p>
+                        <h1>I am a<span class="text-clr"> Software Developer</span></h1>
+                        {{!-- <a href="/weather"><button>check now</button></a> --}}
+                    </div>
+
+                    {{!-- right side div --}}
+                    <div class="col-md-6 col-12 main_header_right">
+                        <figure>
+                            <img src="../images/self.png" class="img-fluid" alt="self-image">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{>footer}}
 </body>
+
 </html>
