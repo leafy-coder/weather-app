@@ -13,10 +13,11 @@ submitBtn.addEventListener('click', async(event) => {
             let url = `https://api.openweathermap.org/data/2.5/weather?q=${document.getElementById('cityname').value}&appid=012dc06b08ddbf2e4712a8062262df35`;
             let resData = await fetch(url);
             const data = await resData.json();
-            // console.log(data);
             const arrData = [data];
             document.getElementById('city_name').innerHTML = `${arrData[0].name}, ${arrData[0].sys.country}`
-            document.getElementById('temp').innerHTML = arrData[0].main.temp;
+            let celsius = Math.trunc(arrData[0].main.temp - 273.15);
+            console.log(celsius);
+            document.getElementById('temp').innerHTML = celsius;
             
             const tempMode = arrData[0].weather[0].main
 
